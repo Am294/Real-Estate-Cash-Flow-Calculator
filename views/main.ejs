@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Real Estate Cashflow Calculator
+	</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/realEstateCSS.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+</head>
+    <body>
+
+
+           
+        <div id="title">
+            <div id="individual">
+            <h1>Indivdual Property Calcualtor</h1>
+        </div>
+
+        <div id="multiple">
+            <h1> City Wide Property Search</h1>
+        </div>
+    </div>
+           
+    
+   
+    <div id="largeRow">
+
+            <%#  Form for calculating cashflow for a single house %>
+
+    <div id="singleHouse">
+     
+        <div></div>
+        <div id="centerTop">
+            <form action="/results" method="GET" id="form1">
+                
+                <div id="addressRow">
+                    <h3 id="alignRight">Address:</h3>
+                <input type="text" name="address" id="address">
+                
+            </div>
+                
+            <div id="topCityRow">
+                <h3 id="alignRight">City:</h3>
+                <input type="text" name="city" id="city">
+            </div>
+            
+            <div id="topStateRow">
+                <h3 id="alignRight">State:</h3>
+                <select name="state" id="state">
+                    <option value="AL">Alabama</option>
+                    <option value="AK">Alaska</option>
+                    <option value="AZ">Arizona</option>
+                    <option value="AR">Arkansas</option>
+                    <option value="CA">California</option>
+                    <option value="CO">Colorado</option>
+                    <option value="CT">Connecticut</option>
+                    <option value="DE">Delaware</option>
+                    <option value="DC">District Of Columbia</option>
+                    <option value="FL">Florida</option>
+                    <option value="GA">Georgia</option>
+                    <option value="HI">Hawaii</option>
+                    <option value="ID">Idaho</option>
+                    <option value="IL">Illinois</option>
+                    <option value="IN">Indiana</option>
+                    <option value="IA">Iowa</option>
+                    <option value="KS">Kansas</option>
+                    <option value="KY">Kentucky</option>
+                    <option value="LA">Louisiana</option>
+                    <option value="ME">Maine</option>
+                    <option value="MD">Maryland</option>
+                    <option value="MA">Massachusetts</option>
+                    <option value="MI">Michigan</option>
+                    <option value="MN">Minnesota</option>
+                    <option value="MS">Mississippi</option>
+                    <option value="MO">Missouri</option>
+                    <option value="MT">Montana</option>
+                    <option value="NE">Nebraska</option>
+                    <option value="NV">Nevada</option>
+                    <option value="NH">New Hampshire</option>
+                    <option value="NJ">New Jersey</option>
+                    <option value="NM">New Mexico</option>
+                    <option value="NY">New York</option>
+                    <option value="NC">North Carolina</option>
+                    <option value="ND">North Dakota</option>
+                    <option value="OH">Ohio</option>
+                    <option value="OK">Oklahoma</option>
+                    <option value="OR">Oregon</option>
+                    <option value="PA">Pennsylvania</option>
+                    <option value="RI">Rhode Island</option>
+                    <option value="SC">South Carolina</option>
+                    <option value="SD">South Dakota</option>
+                    <option value="TN">Tennessee</option>
+                    <option value="TX">Texas</option>
+                    <option value="UT">Utah</option>
+                    <option value="VT">Vermont</option>
+                    <option value="VA">Virginia</option>
+                    <option value="WA">Washington</option>
+                    <option value="WV">West Virginia</option>
+                    <option value="WI">Wisconsin</option>
+                    <option value="WY">Wyoming</option>
+                </select>
+            </div>
+
+            <div id="downPaymentRow">
+                <h3 id="alignRight">Down Payment:</h3>
+                <input type="text" name="downPayment" id="downPayment">
+                <div id="percent"><p> % </p> </div>
+            </div>
+
+            <div id="propertyManagerRow">
+                    <h3 id="alignRight">Will you use a property manager?</h3>
+                    <select name="propertyManager" id="propertyManager">
+                            <option value="True"> Yes</option>
+                            <option value="False">No</option>
+                    </select>
+                </div>
+
+                <div id="propertyTaxRow">
+                        <h3 id="alignRight">Property Tax Rate:</h3>
+                        <input type="text" name="propertyTax" id="propertyTax">
+                        <div id="percent"><p> % </p> </div>
+                    </div>
+
+                    <div id="emergencyRow">
+                            <h3 id="alignRight">Percentage Of Rent To Save For Emergencies:</h3>
+                            <input type="text" name="emergency" id="emergency">
+                            <div id="percent"><p> % </p> </div>
+                        </div>
+
+                        <div id="interestRateRow">
+                                <h3 id="alignRight">InterestRate:</h3>
+                                <input type="text" name="interestRate" id="interestRate">
+                                <div id="percent"><p> % </p> </div>
+                            </div>
+
+            <div id="topButtonRow">
+                <div></div>
+                    <button id="btn" type="submit">Submit</button>  
+
+                    <div></div>  
+            </div>
+            
+            </form>
+        </div>
+
+        <div></div>
+    </div>
+
+    
+  <%# Form for searching for houses across a specified city %>
+    <div id="multipleHouses">
+
+        <div></div>
+
+        <div id="centerBottom">
+            <form action="/listings/1" method="GET">
+
+                <div id="bottomCityRow">
+                        <h3 id="alignRight">City:</h3>
+                <input type="text"  name="city" id="cityBottom">
+            </div>
+            <div id="bottomStateRow">
+                    <h3 id="alignRight">State:</h3>
+                <select  name="state" id="stateBottom">
+                    <option value="AL">Alabama</option>
+                    <option value="AK">Alaska</option>
+                    <option value="AZ">Arizona</option>
+                    <option value="AR">Arkansas</option>
+                    <option value="CA">California</option>
+                    <option value="CO">Colorado</option>
+                    <option value="CT">Connecticut</option>
+                    <option value="DE">Delaware</option>
+                    <option value="DC">District Of Columbia</option>
+                    <option value="FL">Florida</option>
+                    <option value="GA">Georgia</option>
+                    <option value="HI">Hawaii</option>
+                    <option value="ID">Idaho</option>
+                    <option value="IL">Illinois</option>
+                    <option value="IN">Indiana</option>
+                    <option value="IA">Iowa</option>
+                    <option value="KS">Kansas</option>
+                    <option value="KY">Kentucky</option>
+                    <option value="LA">Louisiana</option>
+                    <option value="ME">Maine</option>
+                    <option value="MD">Maryland</option>
+                    <option value="MA">Massachusetts</option>
+                    <option value="MI">Michigan</option>
+                    <option value="MN">Minnesota</option>
+                    <option value="MS">Mississippi</option>
+                    <option value="MO">Missouri</option>
+                    <option value="MT">Montana</option>
+                    <option value="NE">Nebraska</option>
+                    <option value="NV">Nevada</option>
+                    <option value="NH">New Hampshire</option>
+                    <option value="NJ">New Jersey</option>
+                    <option value="NM">New Mexico</option>
+                    <option value="NY">New York</option>
+                    <option value="NC">North Carolina</option>
+                    <option value="ND">North Dakota</option>
+                    <option value="OH">Ohio</option>
+                    <option value="OK">Oklahoma</option>
+                    <option value="OR">Oregon</option>
+                    <option value="PA">Pennsylvania</option>
+                    <option value="RI">Rhode Island</option>
+                    <option value="SC">South Carolina</option>
+                    <option value="SD">South Dakota</option>
+                    <option value="TN">Tennessee</option>
+                    <option value="TX">Texas</option>
+                    <option value="UT">Utah</option>
+                    <option value="VT">Vermont</option>
+                    <option value="VA">Virginia</option>
+                    <option value="WA">Washington</option>
+                    <option value="WV">West Virginia</option>
+                    <option value="WI">Wisconsin</option>
+                    <option value="WY">Wyoming</option>
+                </select>
+            </div>
+            <div id="minPriceRow">
+                    <h3 id="alignRight">Minimum Price: $</h3>
+                <input type="number" name="minPrice" id="minPrice">
+            </div>
+            <div id="maxPriceRow">
+                    <h3 id="alignRight">Maximum Price: $</h3>
+                <input type="number"  name="maxPrice" id="maxPrice">
+            </div>
+            <div id="bedroomsRow">
+                    <h3 id="alignRight">Bedrooms:</h3>
+                    <select  name="bedrooms" id="bedrooms">
+                            <option value=1>1+</option>
+                            <option value=2>2+</option>
+                            <option value=3>3+</option>
+                            <option value=4>4+</option>
+                            <option value=5>5+</option>
+                    </select>
+            </div>
+            <div id="bathroomsRow"> 
+                    <h3 id="alignRight">Bathrooms:</h3>
+                    <select  name="bathrooms" id="bathrooms">
+                            <option value=1>1+</option>
+                            <option value=2>2+</option>
+                            <option value=3>3+</option>
+                            <option value=4>4+</option>
+                    </select>
+            </div>
+            <div id=buttonBottom>
+                <div></div>
+                <button id="btn" type="submit">Submit</button>
+            </div>
+            
+            </form>
+
+        </div>
+
+        </div>
+    
+    </div>
+
+
+    </body>
+
+    </html>

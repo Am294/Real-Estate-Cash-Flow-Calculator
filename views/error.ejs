@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Real Estate Results
+	</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/realEstateCSS.css">
+</head>
+
+    <body>
+        <div id="centerError">
+<h1>Invalid input: <%= error %> </h1>
+
+<%# Output for trying to access unavailable data %>
+
+<% if ( ascii  == -1) { %>
+    <h1>The necessary data for the house you are trying to search is unavaileble. Please try another house.</h1>
+    <% } %>
+
+    <%# Specific output for common invalid inputs %>
+<% if ( ascii  == 37) { %> 
+    <h1> Do not use % </h1>
+  <%  } else  if ( ascii == 36) { %>
+    <h1> Do not use $</h1> 
+ <% }  else if ( ( ascii  > 64 &&  91 >  ascii  ) ||  (ascii  > 96 &&  123 >  ascii )) { %>
+    <h1> Do not use letters </h1> 
+    <%  } else{ %> 
+   <h1> Do not use unidentified symbols </h1>
+   <% } %>
+  
+
+   <%# Button to return to the search page %>
+<form action="/">
+    <input type="submit" value="Search Again" id="btn">
+    </form>
+
+</div>
+
+</body>
+
+</head>
+
+</html>

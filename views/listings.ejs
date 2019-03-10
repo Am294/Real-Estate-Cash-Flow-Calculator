@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Real Estate Profits
+	</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/realEstateCSS.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+</head>
+    <body>
+
+            <%# Title %>
+        <div id="listingHeader">
+       <h1> Search results for homes in <%= cityListings[0].city %> , <%= cityListings[0].state %>  </h1>
+
+       <%# Home Button %>
+
+         <form action="/">
+        <input type="submit" value="Search Again" id="btn">
+        </form>
+        </div>
+        <div id="listingColumns">
+        
+                <%# Iterate through each house found on movoto.com %>
+        <% cityListings.forEach( function (house){ %>
+           
+            <div id="oneItem">
+                    <%# Hidden form that holds data on each house %>
+                    <%# If the user clicks on the attached button it calculates the cashflow for the property with a few assumptions: %>
+                    <%# 20% down, saves 15% of rent each month for emergencies, 2% property tax, and a 4.62% interest rate %>
+                    
+            <form action="/results" method="GET">
+                <div id="hidden">
+                
+                <input type="text" placeholder="Address" name="address" value="<%= house.address %>" >
+                <input type="text" placeholder="City" name="city" value=<%= house.city %>>
+                <input type="text" placeholder="State" name="state" value=<%= house.state %>>
+                <input type="number"  name="downPayment" value=20>
+                <input type="text"  name="propertyManager" value="True">
+                <input type="number"  name="propertyTax" value="2">
+                <input type="number"  name="emergency" value="15">
+                <input type="number" name="interestRate" value="4.62">
+                    </div>
+
+
+               
+            
+            <h1>  <%= house.address %> </a></h1>
+            <h4> Price: <%= house.price %> </h4>
+
+            <button id="btn" class="listingBtn" type="submit">View House</button>
+            
+        </form>
+            <img  id = "listingPhoto" src="<%= house.photo %>">
+        </div>
+      
+        <% }); %>
+
+        
+       
+    </div>
+    <div id="listingFooter">
+    <form action="/">
+        <input type="submit" value="Search Again" id="btn">
+        </form>
+    </div> 
+
+    </body>
+
+    
+    </html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Real Estate Results
+	</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/realEstateCSS.css">
+</head>
+
+    <body>
+   
+        <div id="singleResults">
+            <div id="resultsAddressHeader">
+              <h1> <%= address %> ,  <%= city %> , <%= state %> </h1>
+            </div>
+    
+            <div id="calcHeader">
+              <h1>Calculations</h1>
+            </div>
+            <div id="houseHeader">
+              <h1>House Information</h1>
+            </div>
+    
+            <%#  Div for google maps streetview %>
+          <div id="mapDiv">
+          <div id="map"></div>
+          <div id="pano"></div>
+        </div>
+         
+         
+        <%#  Div with calculation results %>
+
+    <div id="calculations">
+      <ul> 
+       <li> <div id="calcText">Monthly rental income: </div>  $<%=profit.rent %>  </li>
+
+       <li> 
+         <div id="calcText">Monthly expenses: </div>  $<%=profit.monthlyExpenses %> 
+        <ul id="smallerText">
+            <li> <div id="calcText">Mortgage: </div>  $<%=profit.mortgage %>  </li>
+            <li> <div id="calcText">Property Management: </div>  $<%=profit.propertyManagement %>  </li>
+            <li> <div id="calcText">Emergency Savings: </div>  $<%=profit.emergencySavings %>  </li>
+        </ul>
+      </li>
+      <li> <div id="calcText">Annual Property Taxes: </div>  $<%=profit.propertyTaxes %>  </li>
+      <ul id="smallerText">
+          <li> <div id="calcText">Property Tax Rate: </div>  <%=profit.propertyTaxRate %>%  </li>
+          <li> <div id="calcText">Averaged Monthly Property Taxes: </div>  $<%=profit.monthlyPropertyTaxes %>  </li>
+      </ul>
+      <li> <div id="calcText">Total Averaged Monthly Expenses: </div>  $<%=profit.monthlyPropertyTaxes + profit.monthlyExpenses %>  </li>
+      <li> <div id="calcText">Monthly Net Cashflow: </div>  $<%= profit.rent - profit.monthlyPropertyTaxes - profit.monthlyExpenses %>  </li>
+      <li> <div id="calcText">Annual Net Cashflow: </div>  $<%= 12*(profit.rent - profit.monthlyPropertyTaxes - profit.monthlyExpenses )%>  </li>
+      <li> <div id="calcText">Annual Cash on Cash Returns: </div>  <%=  profit.cashOnCash%>%  </li>
+       </ul>
+      
+    </div>
+   
+    <%#  Div with additional property information %>
+    <div id="houseFacts">
+        <ul> 
+            <li> <div id="calcText">Price: </div>  $<%=price %>  </li>
+            <li> <div id="calcText">Zip Code: </div>  <%=zipCode %>  </li>
+            <li> <div id="calcText">Longitude: </div>  <%= longitude %>  </li>
+            <li> <div id="calcText">Latitude </div>  <%= latitude %>  </li>
+            <li> <div id="calcText">Year Built </div>  <%= yearBuilt %>  </li>
+            <li> <div id="calcText">House Size </div>  <%= houseSize %> Sqft  </li>
+            <li> <div id="calcText">Lot Size </div>  <%= lotSize %> Sqft </li>
+            <li> <div id="calcText">Bedrooms: </div>  <%= bedrooms %> </li>
+            <li> <div id="calcText">Bathrooms: </div>  <%= bathrooms %> </li>
+        </ul>
+    </div>
+  
+
+      <div id="filler"></div>
+
+      <div id="moveButton">
+      <form action="/">
+        <input type="submit" value="Search Again" id="btn" class="biggerButton">
+        </form>
+      </div>
+  </div>
+   
+
+ 
+  
+  <%#  Script for google maps 3d street view %>
+  <%#  I chose google maps street view because zillow doesn't have photos for houses in the api %>
+  <%#   I then looked into static photo libraries and google maps did have searchable photos for houses.%>
+  <%#  However, the photos were just snapshots taken from a specified angle from street view , making it hard to have consistent quality photos %>
+  <%#  Even though the 3d street view is a bit clunky and takes a while to load, it allows users to get a more detailed look at houses. %>
+
+   <script>
+
+    
+     let house = {lat: <%= latitude %>, lng: <%= longitude %> };
+     function initialize() {
+         
+       var panorama = new google.maps.StreetViewPanorama(
+           document.getElementById('map'), {
+             position: house,
+             pov: {
+               heading: 0,
+               pitch: 10
+             }
+           });
+       map.setStreetView(panorama);
+     }
+
+   </script>
+
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkHAZqVc2plzdMR_bkBgtkd6kdwJCgtUw&callback=initialize">
+</script>
+
+
+    </body>
+
+    
+    </html>

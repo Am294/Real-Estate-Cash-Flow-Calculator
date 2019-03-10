@@ -1,0 +1,259 @@
+#title,#singleHouse#multipleHouses{
+    text-align: center;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+#cityBar{
+    margin-top:10%;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  #map, #pano, #mapDiv {
+    
+    height: 120%;
+    width: 97%;
+  }
+
+
+  ul{
+    list-style-type: none;
+  }
+
+  #hidden{
+      display: none;
+  }
+
+  #state, #propertyManager{
+      width:30%;
+      height:50%;
+      margin-top: 5%;
+      border: 1px solid black;
+  }
+
+  #downPayment, #propertyTax, #emergency, #interestRate{
+      width:80%;
+      height: 30%;
+      margin-top: 45%;
+      border: 1px solid black;
+  }
+
+  #address{
+      width: 80%;
+      height: 50%;
+      margin-top: 4%;
+      border: 1px solid black;
+  }
+
+  #city{
+    width: 80%;
+    height: 50%;
+    margin-top: 4%;
+    border: 1px solid black;
+}
+
+
+  #singleHouse , #multipleHouses {
+      display:grid;
+      grid-template-columns: 10% 80% 10%;
+   
+}
+
+  #topButtonRow, #buttonBottom{
+    display: grid;
+    grid-template-columns: 40% 20% 40%;
+  }
+
+  #downPaymentRow, #propertyTaxRow, #emergencyRow, #interestRateRow{
+    display: grid;
+    grid-template-columns: 50% 8% 42%;
+    
+  }
+
+  #alignRight{
+      text-align:right;
+      padding-right: 5%;
+  }
+
+  #topButtonRow, #buttonBottom{
+      text-align:center;
+  }
+  
+  #percent{
+      text-align:left;
+      margin-top:2%;
+  }
+
+
+  #centerTop, #centerBottom{
+      border:2px solid black;
+  }
+
+
+  #minPriceRow, #maxPriceRow,#bathroomsRow, #bedroomsRow,  #bottomStateRow, #bottomCityRow, #bottomButtonRow, #addressRow,#topCityRow,
+   #topStateRow, #desciriptionColumn, #propertyManagerRow{
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+
+
+  #cityBottom{
+    width: 80%;
+    height: 50%;
+    margin-top: 5%;
+    border: 1px solid black;
+  }
+
+  #stateBottom{
+    width:30%;
+    height:50%;
+    margin-top: 4%;
+    border: 1px solid black;
+  }
+
+  #minPrice, #maxPrice{
+    width:30%;
+    height:50%;
+    margin-top: 4%;
+    border: 1px solid black;
+}
+
+#bedrooms, #bathrooms{
+    width:15%;
+    height:50%;
+    margin-top: 4%;
+    border: 1px solid black;
+}
+
+#largeRow{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+#topButtonRow{
+    padding-top:9.5%;
+}
+
+html {
+    background-image: linear-gradient(to bottom, rgb(59, 196, 150) , rgb(51, 169, 224));
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+   }
+
+   #listingColumns{
+    display: grid;
+    grid-template-columns: 50% 50%;
+   }
+
+#oneItem{
+    text-align:center;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#listingPhoto{
+    width:400px;
+    height:400px;
+}
+
+#oneItem:hover{
+    border: 2px solid #ffffff;
+    background:  linear-gradient(to bottom, rgb(75, 224, 235) , rgb(35, 192, 171));
+}
+
+#btn:hover {
+    opcatiy: 1;
+    border: 1px solid #ffffff;
+    background: #f5f5f5;
+    transform: scale(1.1);
+}
+
+.listingBtn{
+    width:15%;
+    margin-bottom: 2%;
+}
+
+.biggerButton{
+    width: 50%;
+    height: 40%;
+
+}
+#listingHeader{
+    text-align:center;
+}
+
+#listingFooter{
+    text-align: center;
+    margin-bottom: 2%;
+}
+
+#centerError{
+    text-align: center;
+}
+
+#centerTop:hover , #centerBottom:hover{
+    opacity: 1;
+    background: linear-gradient(to bottom, rgb(91, 241, 191) , rgb(78, 193, 247));
+    
+}
+
+
+
+#singleResults{
+    display: grid;
+    grid-template-columns: 45% 27% 27%;
+    grid-auto-rows: 30% 100%;
+    padding-left: 1%;
+    padding-right:2%;
+    column-gap: 1rem;
+}
+
+#houseHeader, #calcHeader{
+    text-align: center;
+}
+
+#calculations, #houseFacts
+{
+    border: 2px solid black;
+    font-size: 20px;
+    background: linear-gradient(to top, rgb(89, 105, 101) , rgb(172, 180, 185));
+}
+
+
+#calcText{
+    font-weight: bold;
+    display: inline;
+}
+
+#smallerText{
+    font-size: 16px;
+}
+
+
+#moveButton{
+    text-align: center;
+    padding-top: 1%;
+}
+
+
+/* Optimize listing photos for mobile use */
+
+@media only screen and (max-width: 950px) {
+    #listingPhoto{
+        width:250px;
+        height:250px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #listingPhoto{
+        width:150px;
+        height:150px;
+    }
+}
