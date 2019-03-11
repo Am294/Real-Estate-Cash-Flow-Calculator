@@ -13,9 +13,12 @@
     "request": "^2.88.0",
     "xml2js": "^0.4.19"
   },
+  "engines": {
+    "node": "8.11.3"
+  },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node node.js"
   },
   "author": "",
   "license": "ISC"
