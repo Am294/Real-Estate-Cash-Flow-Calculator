@@ -2,7 +2,7 @@
   "name": "realestateprofits",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
+  "main": "node.js",
   "dependencies": {
     "body-parser": "^1.18.3",
     "cheerio": "^1.0.0-rc.2",
