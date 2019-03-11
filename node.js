@@ -328,7 +328,11 @@ app.get("*", (req,res) =>{
     res.send("Invalid Page");
 });
 
-app.listen(3000, () => console.log('Listening on port 3000!'));
+//app.listen(3000, () => console.log('Listening on port 3000!'));
 
+
+app.listen(process.env.PORT || 3000, function(){
+  console.log("Listening on port %d in %s mode", this.address().port, app.settings.env);
+});
 
 //INCLUDE APP>GET * TO CATCH ALL ROUTES NOT SPECIFIED
