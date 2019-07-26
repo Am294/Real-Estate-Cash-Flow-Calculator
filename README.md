@@ -1,3 +1,8 @@
+7/25/19 Update
+
+The website I used for webscraping has added captcha's and I am currently unable to retireve the info.
+Becuase of that the ability to search for cashflow of houses within an entire city is currently unavailable.
+
 Here is the link to the app on heroku: https://real-estate-cash-flow.herokuapp.com/
 
 The real estate cash flow calculator gives users the ability to estimate cash flow for a real estate property and to search
