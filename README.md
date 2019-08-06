@@ -1,10 +1,3 @@
-7/25/19 Update
-
-Using the request module in node I receive a null when I try pulling information from my site to get current listings.
-Becuase of that the ability to search for cashflow of houses within an entire city is currently unavailable.
-
-Here is the link to the app on heroku: https://real-estate-cash-flow.herokuapp.com/
-
 The real estate cash flow calculator gives users the ability to estimate cash flow for a real estate property and to search
 current houses for sale and estimate cashflow instantly.
 
@@ -17,3 +10,5 @@ The city wide property search allows users to search properties currently for sa
 The user provides parameters to help define a house they would like: price range, bedrooms, bathrooms,etc. With this information, 
 movoto.com is scrapped for current real estate listings . These properties are then presented to the user with a brief
 description. From here, the user can click on a property to get more detailed information on the property, provided by the Zillow API.
+
+
